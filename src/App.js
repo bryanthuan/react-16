@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Radium, { StyleRoot } from 'radium'
 import logo from './logo.svg'
 import './App.css'
 import Person from './Person/Person'
@@ -46,11 +45,7 @@ class App extends Component {
 			font: 'inherit',
 			border: '1px solid blue',
 			padding: '8px',
-			cursor: 'pointer',
-			':hover':{
-				backgroundColor:'lightgreen',
-				color: 'black'
-			}
+			cursor: 'pointer'
 		}
 		let person = null
 		if (this.state.showPersons) {
@@ -66,22 +61,17 @@ class App extends Component {
 					})}									
 				</div>
 			)
-			style.backgroundColor = 'red'
-			style[':hover'] = {
-				backgroundColor:'salmon',
-				color: 'black'
-			}
+			style.backgroundColor = 'red'			
 		}
 
 		const classes = []
-		if (this.state.persons.length <=2){
+		if (this.state.persons.length <=2){ 
 			classes.push('red')
 		}
 		if (this.state.persons.length <=1){
 			classes.push('bold')
 		}
-		return (
-			<StyleRoot>
+		return (			
 			<div className="App">
 				<header className="App-header">
 					<img src={logo} className="App-logo" alt="logo" />
@@ -95,10 +85,10 @@ class App extends Component {
 				<p className={classes.join(' ')}>This is really working !</p>
 				
 			</div>
-			</StyleRoot>
+			
 		)
 	}
 }
 
 
-export default Radium(App)
+export default App
